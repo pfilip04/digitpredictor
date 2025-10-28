@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block head %}
+
+    <link rel="stylesheet" href="{% static 'home.css' %}" />
+
+{% endblock %}
+
+{% block content %}
+    <h1>Welcome to the Digit Predictor Web App!</h1>
+    <p id="p1">This web application uses a <b>convolutional neural network (CNN)</b> to recognize hand-drawn digits written directly on a digital canvas.
+        It’s built with <b>Django</b> and powered by a <b>custom-trained machine learning model</b>.</p>
+
+    <h3>How to Use:</h3>
+    <ol>
+        <li>Go to the <b>Digit Predictor</b> page.</li>
+        <li>Write a digit (<b>0-9</b>) on the canvas using your mouse or touchscreen.</li>
+        <li>Click the <b>"Predict"</b> button.</li>
+    </ol>
+
+    <p>The app will analyze your drawing and return the <b>top 3</b> predictions based on the model’s confidence.</p>
+
+    <h3>Note on Accuracy:</h3>
+    <ul>
+        <li>The confidence scores are based on the softmax function, which may not always reflect true certainty.</li>
+    </ul>
+
+    <h3>For best results:</h3>
+    <ul>
+        <li>Keep the digit natural — avoid stretching, tilting, or adding extra noise.</li>
+        <li>Try not to overexaggerate the digit's features; subtle and clean works best.</li>
+        <li>The larger the digit the better!</li>
+    </ul>
+
+    <footer>
+        <p><a href="{% url 'fakepaint' %}">Start with drawing!</a></p>
+    </footer>
+{% endblock %}

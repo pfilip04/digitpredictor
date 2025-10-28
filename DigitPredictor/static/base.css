@@ -1,0 +1,161 @@
+html {
+    font-size: 16px;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #111111;
+  color: #f4f4f4;
+}
+
+body > div {
+  margin: 0 auto;
+  max-width: 60rem;
+  padding: 0 1.5rem;
+}
+
+nav {
+  background-color: #222222;
+  color: #f1f1f1;
+  border-bottom: 0.2rem solid black;
+  padding: 2.2rem 1.5rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav a {
+  color: #f1f1f1;
+  text-decoration: none;
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: none;
+}
+
+.fakenav {
+    display: none;
+    margin: 0;
+    background-color: #222222;
+    height: 6.4rem;
+    width: 100vw;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+}
+
+.menu-button {
+  display: none;
+  height: 100%;
+  width: 6.4rem;
+  border: none;
+  color: white;
+  font-size: 2.5rem;
+  cursor: pointer;
+  background: none;
+  z-index: 1;
+}
+
+.menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #1f1f1f;
+  color: #f1f1f1;
+  font-size: 4rem;
+  padding: 2rem 0;
+  z-index: 2;
+}
+
+img {
+    padding: 1.3rem;
+}
+
+a {
+  color: #8f8f8f;
+  text-decoration: none;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+a:hover, a:focus {
+  color: #2f2f2f;
+  text-decoration: none;
+  outline: none;
+}
+
+a:focus-visible {
+  outline: 0.5rem solid #666;
+  outline-offset: 0.5rem;
+}
+
+h1, h2, h3 {
+  margin-top: 3.5rem;
+  margin-bottom: 1.5rem;
+  color: #f1f1f1;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+h1 {
+  margin-top: 5rem;
+  margin-bottom: 2.5rem;
+  text-decoration: none;
+}
+
+h2 {
+  margin-top: 6.5rem;
+  margin-bottom: 3.5rem;
+}
+
+footer {
+  margin-top: 5rem;
+  margin-bottom: 4rem;
+}
+
+@media (max-width: 1160px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 720px) {
+    body {
+        background-color: #1f1f1f;
+    }
+
+    body > div {
+        border: none !important;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .fakenav {
+        display: flex;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    .menu {
+        display:none;
+    }
+}
+
+@media (max-width: 360px) {
+    html {
+        font-size: 8px;
+    }
+}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Contact{% endblock %}
+
+{% block head %}
+
+    <link rel="stylesheet" href="{% static 'contact.css' %}" />
+
+{% endblock %}
+
+{% block content %}
+    <h1>Feel free to contact us!</h1>
+    <h3>Send suggestions, observations and more or reach out to apply for collaborations at:</h3>
+    <ul id="contacts">
+        <li>Mail : digitpredictor@fakemail.com</li>
+        <li>Instagram : @digitpredictor.fakegram</li>
+        <li>Number : +123 555 0100</li>
+    </ul>
+
+    <footer>
+        <p><a href="{% url 'fakepaint' %}">Go back to the Digit Predictor and draw!</a></p>
+    </footer>
+{% endblock %}

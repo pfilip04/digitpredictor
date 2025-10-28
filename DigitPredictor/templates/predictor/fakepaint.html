@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Digit Predictor{% endblock %}
+
+{% block head %}
+
+    <meta name="csrftoken" content="{{ csrf_token }}">
+    <link rel="stylesheet" href="{% static 'predictor/fakepaint.css' %}" />
+
+{% endblock %}
+
+{% block content %}
+    <div class="result left">
+        <p id="resultn"><b>X</b></p>
+        <p id="resultc">0% confident</p>
+    </div>
+
+    <canvas id="paintcanvas"></canvas>
+
+    <div id="buttonscontainer">
+        <button id="clearbutton">Clear</button>
+        <button id="undobutton">Undo</button>
+        <button id="predictbutton">Predict</button>
+    </div>
+
+    <div class="result right">
+        <p id="c">Contenders:</p>
+        <ul id="contenders">
+            <li>y - 0%</li>
+            <li>z - 0%</li>
+        </ul>
+    </div>
+    <script src="{% static 'predictor/fakepaint.js' %}"></script>
+
+{% endblock %}

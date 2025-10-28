@@ -1,0 +1,98 @@
+body {
+    overflow: hidden;
+}
+
+div:not(.fakenav):not(.menu) {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    max-width: none;
+}
+
+nav {
+    z-index: 1;
+}
+
+#paintcanvas {
+  display: block;
+  position: absolute;
+  background-color: black;
+  z-index: -1;
+}
+
+.result {
+  position: fixed;
+  top: 7rem;
+  z-index: 1;
+  height: 11.5rem;
+  width: 11.5rem;
+  border: 0.2rem solid #9f9f9f;
+  border-radius: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
+}
+
+.left {
+  left: 0.6rem;
+}
+
+.right {
+  right: 0.6rem;
+}
+
+.hidden {
+    display: none;
+}
+
+#resultn {
+  display: block;
+  color: black;
+  font-size: 7.5rem;
+  line-height: 1;
+}
+
+#resultc {
+  color: #222;
+  font-size: 1.4rem;
+}
+
+#c {
+    color: black;
+    font-size: 1.8rem;
+}
+
+p {
+  margin: 0;
+  justify-content: center;
+}
+
+li {
+  color: black;
+  font-size: 1.8rem;
+}
+
+#buttonscontainer {
+  position: fixed;
+  bottom: 2rem;
+  z-index: 1;
+  display: flex;
+  justify-self: center;
+  gap: 1.5rem;
+}
+
+button:hover {
+  background-color: #777;
+}
+
+button:not(.menu-button) {
+  padding: 1rem 2rem;
+  font-size: 1.7rem;
+  cursor: pointer;
+  background-color: #f4f4f4;
+  border: 0.2rem solid #9f9f9f;
+  border-radius: 0.8rem;
+}

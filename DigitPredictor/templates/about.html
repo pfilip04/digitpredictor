@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}About{% endblock %}
+
+{% block head %}
+
+    <link rel="stylesheet" href="{% static 'home.css' %}" />
+
+{% endblock %}
+
+{% block content %}
+    <h1>About the Digit predictor</h1>
+    <p id="p1">
+        Your drawing is converted into a sequence of strokes—coordinates tracking every point your mouse dragged over the canvas.
+        To match the input format expected by the machine learning model, the drawing is rescaled and redrawn on a <b>28×28</b> pixel canvas.
+        This canvas is then saved as a <b>.png</b> image.
+    </p>
+
+    <p id="p1">
+        To send it to the model, the image is first converted to binary data, then encoded into a <b>Base64</b> string made up of <b>ASCII characters</b>.
+        This allows the image to be safely embedded in an API request.
+    </p>
+
+    <p id="p1">
+        On the server, the image is decoded from Base64 back into its original binary form, then converted back to an image format.
+        The model then processes this image using its trained parameters to make a prediction.
+    </p>
+
+    <h3>Model Overview</h3>
+
+    <p>This digit recognizer is powered by a lightweight <b>convolutional neural network (CNN)</b> trained on a combination of:</p>
+    <ul>
+        <li><b>85%</b> <i>MNIST</i> digits</li>
+        <li><b>15%</b> custom handwritten digits <i>(slightly pixelated to introduce noise for training)</i></li>
+    </ul>
+
+    <p>Training was done over <b>100 steps</b> <i>(~40 minutes)</i> with data augmentation techniques including:</p>
+    <ul>
+        <li>Random rotations and translations</li>
+        <li>Dropout and batch normalization</li>
+    </ul>
+
+    <h3>Network Architecture</h3>
+    <ul>
+        <li>2 convolutional layers</li>
+        <li>2 pooling layers</li>
+        <li>2 fully connected layers</li>
+    </ul>
+    <p>While compact, this architecture performs well in many cases.</p>
+
+    <h3>Known Model Limitations</h3>
+    <ul>
+        <li>A moderate tilt and stretching can severely impact accuracy</li>
+        <li>Can confuse <b>1</b> with <b>7</b></li>
+        <li>Occasionally struggles with <b>6</b>, <b>5</b>, and <b>9</b></li>
+        <li>A very small size may result in a less accurate prediction</li>
+    </ul>
+
+    <h3>Planned Upgrades</h3>
+    <ul>
+        <li>A larger training set with additional custom samples</li>
+        <li>Support for multi-digit identification</li>
+        <li>Recognition and evaluation of mathematical equations</li>
+    </ul>
+
+    <footer>
+        <p>Take a look at the MNIST dataset <a href="https://en.wikipedia.org/wiki/MNIST_database">here</a>.</p>
+        <p>Head over to the <a href="{% url 'contact' %}">Contact</a> page — we’d love to hear your suggestions!</p>
+    </footer>
+{% endblock %}

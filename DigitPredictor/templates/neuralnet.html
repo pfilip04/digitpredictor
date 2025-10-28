@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Neural Networks{% endblock %}
+
+{% block head %}
+
+    <link rel="stylesheet" href="{% static 'home.css' %}" />
+
+{% endblock %}
+
+{% block content %}
+    <h1>Neural networks</h1>
+
+    <h2>What is a neural network?</h2>
+
+    <p><b>Neural network</b> in machine learning is a computational model inspired by the structure and functions of biological neural networks.</p>
+
+    <p>A <b>neural network (NN)</b> consists of connected units or nodes called <b>artificial neurons</b>, which loosely model the neurons in the brain.
+        Each artificial neuron receives signals from connected neurons, then processes them and sends a signal to other connected neurons.
+        The <b>"signal"</b> is a real number, and the output of each neuron is computed by some non-linear function of the totality of its inputs,
+        called the <b>activation function</b>. The strength of the signal at each connection is determined by a <b>weight</b>, which adjusts during the learning process.
+        Artificial neuron models that mimic biological neurons more closely have also been recently investigated and shown to significantly improve performance.
+        These are connected by edges, which model the synapses in the brain.</p>
+
+    <p>Typically, neurons are aggregated into <b>layers</b>. Different layers may perform different transformations on their inputs.
+        Signals travel from the first layer (the input layer) to the last layer (the output layer), possibly passing through multiple intermediate layers <b>(hidden layers)</b>.
+        A network is typically called a <b>deep neural network</b> if it has at least two hidden layers.</p>
+
+    <p>Artificial neural networks are used for various tasks, including <b>predictive modeling</b>, <b>adaptive control</b>, and <b>solving problems</b> in artificial intelligence.
+        They can <b>learn from experience</b>, and can <b>derive conclusions</b> from a complex and seemingly unrelated set of information.</p>
+
+    <h2>Convolutional neural networks</h2>
+
+    <p>A <b>convolutional neural network (CNN)</b> is a type of feedforward neural network that learns features via <b>filter</b> <i>(or kernel)</i> <b>optimization</b>.
+        This type of deep learning network has been applied to process and make predictions from many different types of data including <b>text</b>, <b>images</b> and <b>audio</b>.
+        Convolution-based networks are the de-facto standard in deep learning-based approaches to computer vision and image processing,
+        and have only recently been replaced—in some cases—by newer deep learning architectures such as the <b>transformer</b>.</p>
+
+    <p>Convolutional networks were inspired by biological processes in that the connectivity pattern between neurons resembles the organization of the <b>animal visual cortex</b>.
+        Individual cortical neurons respond to stimuli only in a restricted region of the visual field known as the receptive field.
+        The receptive fields of different neurons partially overlap such that they cover the entire visual field.</p>
+
+    <p><b>CNNs</b> use relatively little pre-processing compared to other image classification algorithms.
+        This means that the network learns to optimize the filters (or kernels) through <b>automated learning</b>, whereas in traditional algorithms these filters are hand-engineered.
+        This simplifies and automates the process, enhancing efficiency and scalability overcoming human-intervention bottlenecks.</p>
+
+    <footer>
+        <p>Source and more on the topic <a href="https://en.wikipedia.org/wiki/Neural_network_(machine_learning)">here</a>.</p>
+    </footer>
+{% endblock %}
